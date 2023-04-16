@@ -1,0 +1,887 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Name - STAT 350-001/DL1}
+\lhead{Assignment \#3}
+\cfoot{\thepage}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Assignment 3},
+  pdfauthor={Andrew Lee},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Assignment 3}
+\author{Andrew Lee}
+\date{}
+
+\begin{document}
+\maketitle
+
+\hypertarget{setup-chunk}{%
+\subsection{Setup CHUNK}\label{setup-chunk}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{suppressMessages}\NormalTok{(}\FunctionTok{library}\NormalTok{(magrittr))}
+\FunctionTok{suppressMessages}\NormalTok{(}\FunctionTok{library}\NormalTok{(ggplot2))}
+\FunctionTok{suppressMessages}\NormalTok{(}\FunctionTok{library}\NormalTok{(tidyr))}
+\FunctionTok{suppressMessages}\NormalTok{(}\FunctionTok{library}\NormalTok{(dplyr))}
+\FunctionTok{suppressMessages}\NormalTok{(}\FunctionTok{library}\NormalTok{(modelr))}
+\FunctionTok{suppressMessages}\NormalTok{(}\FunctionTok{library}\NormalTok{(broom))}
+\FunctionTok{suppressMessages}\NormalTok{(}\FunctionTok{library}\NormalTok{(infer))}
+
+\NormalTok{Fisheries }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"Fisheries.csv"}\NormalTok{)}
+\NormalTok{Civic }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"Civics.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{ex-1}{%
+\section{EX 1}\label{ex-1}}
+
+\hypertarget{a}{%
+\subsection{a)}\label{a}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Scatterplot of Metal vs. Biomass}
+\FunctionTok{ggplot}\NormalTok{(Fisheries, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Metal, }\AttributeTok{y =}\NormalTok{ Biomass)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Metal vs. Biomass"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Metal"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Biomass"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{data_analysis_files/figure-latex/unnamed-chunk-2-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Scatterplot of Species vs. Biomass}
+\FunctionTok{ggplot}\NormalTok{(Fisheries, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Species, }\AttributeTok{y =}\NormalTok{ Biomass)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Species vs. Biomass"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Species"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Biomass"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{data_analysis_files/figure-latex/unnamed-chunk-2-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Scatterplot of Area vs. Biomass}
+\FunctionTok{ggplot}\NormalTok{(Fisheries, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Area, }\AttributeTok{y =}\NormalTok{ Biomass)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Area vs. Biomass"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Area"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Biomass"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{data_analysis_files/figure-latex/unnamed-chunk-2-3.pdf}
+
+\hypertarget{b-there-seems-to-be-a-moderately-strong-positive-and-linear-correlation-between-area-and-biomass.-however-the-same-cannot-be-said-about-either-the-species-or-the-metal-levels-as-there-is-no-clear-shape-strength-or-trend-for-these-distributions.}{%
+\subsection{\texorpdfstring{b) \emph{There seems to be a moderately
+strong, positive, and linear correlation between area and biomass.
+However, the same cannot be said about Either the species or the metal
+levels as there is no clear shape, strength, or trend for these
+distributions.}}{b) There seems to be a moderately strong, positive, and linear correlation between area and biomass. However, the same cannot be said about Either the species or the metal levels as there is no clear shape, strength, or trend for these distributions.}}\label{b-there-seems-to-be-a-moderately-strong-positive-and-linear-correlation-between-area-and-biomass.-however-the-same-cannot-be-said-about-either-the-species-or-the-metal-levels-as-there-is-no-clear-shape-strength-or-trend-for-these-distributions.}}
+
+\hypertarget{c-the-coefficient-of-correlation-for-area-v-biomass-is-0.63.-the-coefficient-of-correlation-for-metal-v-biomass-is--0.36.-the-coefficient-of-correlation-for-species-v-biomass-is-0.11}{%
+\subsection{\texorpdfstring{c) \emph{The coefficient of correlation for
+Area v Biomass is 0.63. The coefficient of correlation for Metal v
+Biomass is -0.36. The coefficient of correlation for Species v Biomass
+is
+0.11}}{c) The coefficient of correlation for Area v Biomass is 0.63. The coefficient of correlation for Metal v Biomass is -0.36. The coefficient of correlation for Species v Biomass is 0.11}}\label{c-the-coefficient-of-correlation-for-area-v-biomass-is-0.63.-the-coefficient-of-correlation-for-metal-v-biomass-is--0.36.-the-coefficient-of-correlation-for-species-v-biomass-is-0.11}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cor}\NormalTok{(Fisheries}\SpecialCharTok{$}\NormalTok{Area, Fisheries}\SpecialCharTok{$}\NormalTok{Biomass)  }\CommentTok{\# Correlation between Area and Biomass}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.6373746
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cor}\NormalTok{(Fisheries}\SpecialCharTok{$}\NormalTok{Metal, Fisheries}\SpecialCharTok{$}\NormalTok{Biomass) }\CommentTok{\# Correlation between Depth and Biomass}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] -0.367857
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cor}\NormalTok{(Fisheries}\SpecialCharTok{$}\NormalTok{Species, Fisheries}\SpecialCharTok{$}\NormalTok{Biomass) }\CommentTok{\# Correlation between Temperature and Biomass}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] -0.1118514
+\end{verbatim}
+
+\hypertarget{d-based-on-the-calculated-correlation-coefficients-area-has-the-largest-it-appears-that-area-has-the-strongest-relationship-with-biomass-as-such-it-seems-as-if-her-claim-is-relatively-true.}{%
+\subsection{\texorpdfstring{d) \emph{Based on the calculated correlation
+coefficients (area has the largest), it appears that ``Area'' has the
+strongest relationship with ``Biomass'' as such it seems as if her claim
+is relatively
+true.}}{d) Based on the calculated correlation coefficients (area has the largest), it appears that ``Area'' has the strongest relationship with ``Biomass'' as such it seems as if her claim is relatively true.}}\label{d-based-on-the-calculated-correlation-coefficients-area-has-the-largest-it-appears-that-area-has-the-strongest-relationship-with-biomass-as-such-it-seems-as-if-her-claim-is-relatively-true.}}
+
+\hypertarget{e}{%
+\subsection{e)}\label{e}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Making the Regression Model}
+\NormalTok{area\_model }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(Biomass }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Area, }\AttributeTok{data =}\NormalTok{ Fisheries)}
+
+\CommentTok{\# Outputting the Results from the Model}
+\NormalTok{area\_model }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{tidy}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 2 x 5
+##   term        estimate std.error statistic  p.value
+##   <chr>          <dbl>     <dbl>     <dbl>    <dbl>
+## 1 (Intercept)   111.      74.7        1.49 0.149   
+## 2 Area            1.94     0.451      4.30 0.000200
+\end{verbatim}
+
+\hypertarget{f}{%
+\subsection{f)}\label{f}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Scatterplot of Area vs. Biomass}
+\FunctionTok{ggplot}\NormalTok{(Fisheries, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Area, }\AttributeTok{y =}\NormalTok{ Biomass)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_abline}\NormalTok{(}\AttributeTok{slope =}\NormalTok{ area\_model}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{],}
+              \AttributeTok{intercept =}\NormalTok{ area\_model}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{1}\NormalTok{]) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Linear Regression Model for Area vs. Biomass"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Area"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Biomass"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{data_analysis_files/figure-latex/unnamed-chunk-5-1.pdf}
+
+\hypertarget{g}{%
+\subsection{g)}\label{g}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Finding the Residuals and Predicted Values}
+\NormalTok{Fisheries }\OtherTok{\textless{}{-}}\NormalTok{ Fisheries }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}\FunctionTok{add\_residuals}\NormalTok{(Fisheries, }
+\NormalTok{                       area\_model,}
+                       \AttributeTok{var =} \StringTok{"resid"}\NormalTok{),}
+         \FunctionTok{add\_predictions}\NormalTok{(Fisheries, }
+\NormalTok{                         area\_model, }
+                         \AttributeTok{var =} \StringTok{"pred"}\NormalTok{)) }
+\NormalTok{Fisheries }\OtherTok{\textless{}{-}}\NormalTok{ Fisheries }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{index =} \DecValTok{1}\SpecialCharTok{:}\DecValTok{29}\NormalTok{)}
+\CommentTok{\# Creating the Residual Plot}
+\NormalTok{Fisheries }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ pred, }\AttributeTok{y =}\NormalTok{ resid)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_hline}\NormalTok{(}\AttributeTok{yintercept =} \DecValTok{0}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"Predicted Values"}\NormalTok{,}
+       \AttributeTok{title =} \StringTok{"Residual Plot"}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{"Residuals"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{data_analysis_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Creating the QQ plots}
+\NormalTok{Fisheries }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_qq}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{sample =}\NormalTok{ resid)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_qq\_line}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{sample =}\NormalTok{ resid)) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"Z Score"}\NormalTok{,}
+       \AttributeTok{title =} \StringTok{"QQ Plot"}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{"Residuals"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{data_analysis_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Fisheries }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{(}\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ index, }\AttributeTok{y =}\NormalTok{ resid)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ index, }\AttributeTok{y =}\NormalTok{ resid)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_hline}\NormalTok{(}\AttributeTok{yintercept =} \DecValTok{0}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"Index"}\NormalTok{,}
+       \AttributeTok{title =} \StringTok{"Residual Index Plot"}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{"Residuals"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{data_analysis_files/figure-latex/unnamed-chunk-8-1.pdf}
+
+\hypertarget{h-the-model-seems-to-pass-all-of-the-assumptions-we-do-not-observe-any-grouping-of-positive-or-negative-residuals-within-the-index-plot-a-relatively-normal-distribution-of-residuals-as-seen-in-the-qq-plot-and-relative-homoscedasticity-as-seen-in-the-residual-plot.}{%
+\subsection{\texorpdfstring{h) \emph{The model seems to pass all of the
+assumptions we do not observe any grouping of positive or negative
+residuals within the index plot, a relatively normal distribution of
+residuals (as seen in the QQ plot), and relative homoscedasticity (as
+seen in the residual
+plot).}}{h) The model seems to pass all of the assumptions we do not observe any grouping of positive or negative residuals within the index plot, a relatively normal distribution of residuals (as seen in the QQ plot), and relative homoscedasticity (as seen in the residual plot).}}\label{h-the-model-seems-to-pass-all-of-the-assumptions-we-do-not-observe-any-grouping-of-positive-or-negative-residuals-within-the-index-plot-a-relatively-normal-distribution-of-residuals-as-seen-in-the-qq-plot-and-relative-homoscedasticity-as-seen-in-the-residual-plot.}}
+
+\hypertarget{i-within-the-context-of-this-model-we-observe-a-1.93-increase-in-body-mass-for-every-unit-increase-in-the-area.-when-the-area-is-equal-to-0-the-body-mass-is-equal-to-111.02.-our-equation-ey-or-body-mass-1.93-or-beta1area-111.02-or-beta2-error-term}{%
+\subsection{\texorpdfstring{i) \emph{Within the context of this model,
+we observe a 1.93 increase in body mass for every unit increase in the
+area. When the area is equal to 0, the body mass is equal to 111.02.}
+Our equation: E(y) or Body Mass = (1.93 or Beta1)(Area) + (111.02 or
+Beta2) + error
+term}{i) Within the context of this model, we observe a 1.93 increase in body mass for every unit increase in the area. When the area is equal to 0, the body mass is equal to 111.02. Our equation: E(y) or Body Mass = (1.93 or Beta1)(Area) + (111.02 or Beta2) + error term}}\label{i-within-the-context-of-this-model-we-observe-a-1.93-increase-in-body-mass-for-every-unit-increase-in-the-area.-when-the-area-is-equal-to-0-the-body-mass-is-equal-to-111.02.-our-equation-ey-or-body-mass-1.93-or-beta1area-111.02-or-beta2-error-term}}
+
+\hypertarget{j-our-95-percent-confidence-interval-for-the-slope-is-1.01-to-2.86}{%
+\subsection{\texorpdfstring{j) \emph{Our 95 percent confidence interval
+for the slope is 1.01 to
+2.86}}{j) Our 95 percent confidence interval for the slope is 1.01 to 2.86}}\label{j-our-95-percent-confidence-interval-for-the-slope-is-1.01-to-2.86}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{confint}\NormalTok{(area\_model, }\AttributeTok{level =} \FloatTok{0.95}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                  2.5 %     97.5 %
+## (Intercept) -42.200413 264.248778
+## Area          1.012162   2.861285
+\end{verbatim}
+
+\hypertarget{k-hypotheses-null-beta1-0-alt-beta1-0}{%
+\subsection{\texorpdfstring{k) \emph{HYPOTHESES: NULL: Beta1 = 0 ALT:
+Beta1 =/=
+0}}{k) HYPOTHESES: NULL: Beta1 = 0 ALT: Beta1 =/= 0}}\label{k-hypotheses-null-beta1-0-alt-beta1-0}}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{To calculate our test statistic, we must divide the difference
+  between the observed statistic (which is 1.93) and our null parameter
+  (which in this case is 0) by our standard error (which is 0.45) to get
+  our test stat of 4.29. We then use this test stat on a t distribution
+  with 27 (29-(1+1)) degrees of freedom to get our p value of 0.0002.}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{area\_model }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{tidy}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{select}\NormalTok{(term}\SpecialCharTok{:}\NormalTok{p.value)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 2 x 5
+##   term        estimate std.error statistic  p.value
+##   <chr>          <dbl>     <dbl>     <dbl>    <dbl>
+## 1 (Intercept)   111.      74.7        1.49 0.149   
+## 2 Area            1.94     0.451      4.30 0.000200
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Our p value of 0.0002 tells us that we have significant evidence
+  at a 0.01 significance level to suggest that our slope differs from 0
+  (our slope is significant).}
+\end{itemize}
+
+\hypertarget{l-within-the-context-of-this-model-we-observe-a-1.93-increase-in-body-mass-for-every-unit-increase-in-the-area.}{%
+\subsection{\texorpdfstring{l) \emph{Within the context of this model,
+we observe a 1.93 increase in body mass for every unit increase in the
+area.}}{l) Within the context of this model, we observe a 1.93 increase in body mass for every unit increase in the area.}}\label{l-within-the-context-of-this-model-we-observe-a-1.93-increase-in-body-mass-for-every-unit-increase-in-the-area.}}
+
+\hypertarget{m-it-is-not-meaningful-to-interpret-the-y-intercept-of-this-regression-because-it-is-impossible-or-very-impractical-for-a-fishery-to-have-an-area-of-0-acres.}{%
+\subsection{\texorpdfstring{m) \emph{It is not meaningful to interpret
+the y-intercept of this regression because it is impossible or very
+impractical for a Fishery to have an area of 0
+acres.}}{m) It is not meaningful to interpret the y-intercept of this regression because it is impossible or very impractical for a Fishery to have an area of 0 acres.}}\label{m-it-is-not-meaningful-to-interpret-the-y-intercept-of-this-regression-because-it-is-impossible-or-very-impractical-for-a-fishery-to-have-an-area-of-0-acres.}}
+
+\hypertarget{n-to-calculate-our-r2-value-we-need-to-calculate-divide-the-sum-of-the-squares-for-the-error-68916.49-by-the-sum-of-the-squares-for-the-total-116069.17-and-subtract-that-value-from-1-to-get-0.406-for-our-r2.-the-workcode-for-this-shown-below}{%
+\subsection{\texorpdfstring{n) \emph{To calculate our R\^{}2 value we
+need to calculate divide the Sum of the Squares for the Error 68916.49
+by the Sum of the Squares for the Total 116069.17 and subtract that
+value from 1 to get 0.406 for our R\^{}2. The work/code for this shown
+below}}{n) To calculate our R\^{}2 value we need to calculate divide the Sum of the Squares for the Error 68916.49 by the Sum of the Squares for the Total 116069.17 and subtract that value from 1 to get 0.406 for our R\^{}2. The work/code for this shown below}}\label{n-to-calculate-our-r2-value-we-need-to-calculate-divide-the-sum-of-the-squares-for-the-error-68916.49-by-the-sum-of-the-squares-for-the-total-116069.17-and-subtract-that-value-from-1-to-get-0.406-for-our-r2.-the-workcode-for-this-shown-below}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Getting our SSTotal}
+\NormalTok{SStot }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{((Fisheries}\SpecialCharTok{$}\NormalTok{Biomass }\SpecialCharTok{{-}} \FunctionTok{mean}\NormalTok{(Fisheries}\SpecialCharTok{$}\NormalTok{Biomass))}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{)}
+
+\CommentTok{\# Getting our SSError}
+\NormalTok{SSres }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(}\FunctionTok{summary}\NormalTok{(area\_model)}\SpecialCharTok{$}\NormalTok{residuals}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{)}
+
+\CommentTok{\# Calculating our R\^{}2}
+\NormalTok{rsqd }\OtherTok{\textless{}{-}} \DecValTok{1} \SpecialCharTok{{-}}\NormalTok{ SSres}\SpecialCharTok{/}\NormalTok{SStot}
+
+\FunctionTok{print}\NormalTok{(}\FunctionTok{paste}\NormalTok{(}\StringTok{"Our R\^{}2 value is:"}\NormalTok{, }\FunctionTok{round}\NormalTok{(rsqd, }\DecValTok{3}\NormalTok{)))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Our R^2 value is: 0.406"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Verifying our Results}
+\NormalTok{area\_model }\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{  glance }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{select}\NormalTok{(r.squared)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 1 x 1
+##   r.squared
+##       <dbl>
+## 1     0.406
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{This value of 0.4062 tells us that the ratio between the
+  variation explained by our model and variation caused by random error
+  is 0.4062. In other words we are told that roughly 40 percent of the
+  variation is explained by the model.}
+\end{itemize}
+
+\hypertarget{o-to-calculate-our-predicted-values-using-our-model-we-must-use-the-following-equation-111.024182576256-1.93672372174676-area.-our-results-are-430.58-498.36-and-566.15-each-respective-to-165-200-and-235-acres.}{%
+\subsection{\texorpdfstring{o) \emph{To calculate our predicted values
+using our model, we must use the following equation 111.024182576256 +
+1.93672372174676 * (area). Our results are 430.58, 498.36, and 566.15
+each respective to 165, 200, and 235
+acres.}}{o) To calculate our predicted values using our model, we must use the following equation 111.024182576256 + 1.93672372174676 * (area). Our results are 430.58, 498.36, and 566.15 each respective to 165, 200, and 235 acres.}}\label{o-to-calculate-our-predicted-values-using-our-model-we-must-use-the-following-equation-111.024182576256-1.93672372174676-area.-our-results-are-430.58-498.36-and-566.15-each-respective-to-165-200-and-235-acres.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Verification:}
+\FunctionTok{predict}\NormalTok{(area\_model, }\AttributeTok{newdata =} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{Area =} \FunctionTok{c}\NormalTok{(}\DecValTok{165}\NormalTok{, }\DecValTok{200}\NormalTok{, }\DecValTok{235}\NormalTok{)))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##        1        2        3 
+## 430.5836 498.3689 566.1543
+\end{verbatim}
+
+\hypertarget{p}{%
+\subsection{p)}\label{p}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Generate predictions and intervals for specific values}
+\NormalTok{new\_data }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{Area =} \FunctionTok{c}\NormalTok{(}\DecValTok{165}\NormalTok{, }\DecValTok{200}\NormalTok{, }\DecValTok{235}\NormalTok{))}
+\NormalTok{pred\_intervals }\OtherTok{\textless{}{-}} \FunctionTok{predict}\NormalTok{(area\_model, }\AttributeTok{newdata =}\NormalTok{ new\_data, }\AttributeTok{interval =} \StringTok{"confidence"}\NormalTok{)}
+\NormalTok{pred\_intervals2 }\OtherTok{\textless{}{-}} \FunctionTok{predict}\NormalTok{(area\_model, }\AttributeTok{newdata =}\NormalTok{ new\_data, }\AttributeTok{interval =} \StringTok{"prediction"}\NormalTok{)}
+
+\CommentTok{\# Create data frame with predictions and intervals}
+\NormalTok{pred\_df }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{AREA =}\NormalTok{ new\_data}\SpecialCharTok{$}\NormalTok{Area,}
+                      \AttributeTok{LOWER =}\NormalTok{ pred\_intervals[,}\DecValTok{2}\NormalTok{], }
+                      \AttributeTok{UPPER =}\NormalTok{ pred\_intervals[,}\DecValTok{3}\NormalTok{])}
+
+\NormalTok{pred\_df2 }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{AREA =}\NormalTok{ new\_data}\SpecialCharTok{$}\NormalTok{Area,}
+                      \AttributeTok{LOWER =}\NormalTok{ pred\_intervals2[,}\DecValTok{2}\NormalTok{], }
+                      \AttributeTok{UPPER =}\NormalTok{ pred\_intervals2[,}\DecValTok{3}\NormalTok{])}
+
+\FunctionTok{print}\NormalTok{(pred\_df }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mutate}\NormalTok{(}\AttributeTok{TYPE =} \StringTok{"confidence"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   AREA    LOWER    UPPER       TYPE
+## 1  165 411.3263 449.8408 confidence
+## 2  200 460.2498 536.4880 confidence
+## 3  235 498.1132 634.1953 confidence
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(pred\_df2 }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mutate}\NormalTok{(}\AttributeTok{TYPE =} \StringTok{"prediction"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   AREA    LOWER    UPPER       TYPE
+## 1  165 325.1477 536.0195 prediction
+## 2  200 387.9200 608.8178 prediction
+## 3  235 442.1564 690.1521 prediction
+\end{verbatim}
+
+\hypertarget{q-the-165-acres-interval-was-the-smallest.-as-the-predictions-move-away-from-the-mean-area-value-there-is-more-uncertainty-and-variability-in-the-data-leading-to-wider-confidence-intervals-and-therefore-less-accuracy-in-the-predictions.}{%
+\subsection{\texorpdfstring{q) \emph{The 165 acres interval was the
+smallest. As the predictions move away from the mean ``Area'' value,
+there is more uncertainty and variability in the data, leading to wider
+confidence intervals and therefore less accuracy in the
+predictions.}}{q) The 165 acres interval was the smallest. As the predictions move away from the mean ``Area'' value, there is more uncertainty and variability in the data, leading to wider confidence intervals and therefore less accuracy in the predictions.}}\label{q-the-165-acres-interval-was-the-smallest.-as-the-predictions-move-away-from-the-mean-area-value-there-is-more-uncertainty-and-variability-in-the-data-leading-to-wider-confidence-intervals-and-therefore-less-accuracy-in-the-predictions.}}
+
+\hypertarget{r-yes-the-value-of-235-was-extrapolation-because-that-value-is-not-within-the-range-of-our-observed-data-our-observed-value-range-is-133-to-218.}{%
+\subsection{\texorpdfstring{r) \emph{Yes, the value of 235 was
+extrapolation because that value is not within the range of our observed
+data (our observed value range is 133 to
+218).}}{r) Yes, the value of 235 was extrapolation because that value is not within the range of our observed data (our observed value range is 133 to 218).}}\label{r-yes-the-value-of-235-was-extrapolation-because-that-value-is-not-within-the-range-of-our-observed-data-our-observed-value-range-is-133-to-218.}}
+
+\hypertarget{s}{%
+\subsection{s)}\label{s}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(Fisheries, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Area, }\AttributeTok{y =}\NormalTok{ Biomass)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{"lm"}\NormalTok{, }\AttributeTok{se =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{level =} \FloatTok{0.95}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_ribbon}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{ymin =} \FunctionTok{predict}\NormalTok{(area\_model, }
+                                 \AttributeTok{interval =} \StringTok{"predict"}\NormalTok{, }
+                                 \AttributeTok{level =} \FloatTok{0.95}\NormalTok{)[, }\StringTok{"lwr"}\NormalTok{], }
+                  \AttributeTok{ymax =} \FunctionTok{predict}\NormalTok{(area\_model, }
+                                 \AttributeTok{interval =} \StringTok{"predict"}\NormalTok{, }
+                                 \AttributeTok{level =} \FloatTok{0.95}\NormalTok{)[, }\StringTok{"upr"}\NormalTok{]), }
+              \AttributeTok{alpha =} \FloatTok{0.2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"Area"}\NormalTok{, }
+       \AttributeTok{y =} \StringTok{"Biomass"}\NormalTok{, }
+       \AttributeTok{title =} \StringTok{"Scatter Plot with Confidence and Prediction Intervals"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning in predict.lm(area_model, interval = "predict", level = 0.95): predictions on current data refer to _future_ responses
+
+## Warning in predict.lm(area_model, interval = "predict", level = 0.95): predictions on current data refer to _future_ responses
+\end{verbatim}
+
+\begin{verbatim}
+## `geom_smooth()` using formula = 'y ~ x'
+\end{verbatim}
+
+\includegraphics{data_analysis_files/figure-latex/unnamed-chunk-14-1.pdf}
+
+\hypertarget{exercise-2}{%
+\section{Exercise 2}\label{exercise-2}}
+
+\hypertarget{a-1}{%
+\subsection{a)}\label{a-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(Civic, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Mileage, }\AttributeTok{y =}\NormalTok{ Price)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Scatterplot of Mileage v Price"}\NormalTok{,}
+       \AttributeTok{x =} \StringTok{"Mileage"}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{"Price"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{data_analysis_files/figure-latex/unnamed-chunk-15-1.pdf}
+
+\hypertarget{b-there-seems-to-be-a-weak-negative-linear-correlation-between-the-mileage-and-the-price-of-a-car.}{%
+\subsection{\texorpdfstring{b) \emph{There seems to be a weak, negative,
+linear correlation between the Mileage and the Price of a
+car.}}{b) There seems to be a weak, negative, linear correlation between the Mileage and the Price of a car.}}\label{b-there-seems-to-be-a-weak-negative-linear-correlation-between-the-mileage-and-the-price-of-a-car.}}
+
+\hypertarget{c-to-calculate-our-first-fitted-value-and-residual-we-must-multiply-the-value-we-want-to-predict-for-by-our-slope-which-is--74.6748.-we-will-then-add-this-to-our-intercept-of-22525.2285-to-get-a-predicted-value-of-22413.2163.-we-will-then-subtract-this-from-the-observed-value-to-get-a-residual-value-of-5336.784}{%
+\subsection{\texorpdfstring{c) \emph{To calculate our first fitted value
+and residual we must multiply the value we want to predict for by our
+slope which is -74.6748. We will then add this to our intercept of
+22525.2285 to get a predicted value of 22413.2163. We will then subtract
+this from the observed value to get a residual value of
+5336.784}}{c) To calculate our first fitted value and residual we must multiply the value we want to predict for by our slope which is -74.6748. We will then add this to our intercept of 22525.2285 to get a predicted value of 22413.2163. We will then subtract this from the observed value to get a residual value of 5336.784}}\label{c-to-calculate-our-first-fitted-value-and-residual-we-must-multiply-the-value-we-want-to-predict-for-by-our-slope-which-is--74.6748.-we-will-then-add-this-to-our-intercept-of-22525.2285-to-get-a-predicted-value-of-22413.2163.-we-will-then-subtract-this-from-the-observed-value-to-get-a-residual-value-of-5336.784}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Creating the linear regression model:}
+\NormalTok{civic\_model }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(Price }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Mileage, }\AttributeTok{data =}\NormalTok{ Civic)}
+
+\CommentTok{\# Displaying the output}
+\NormalTok{civic\_model }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{tidy}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 2 x 5
+##   term        estimate std.error statistic  p.value
+##   <chr>          <dbl>     <dbl>     <dbl>    <dbl>
+## 1 (Intercept)  22525.     1944.      11.6  1.21e-15
+## 2 Mileage        -74.7      15.2     -4.91 1.04e- 5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Getting the residuals and predictions:}
+\NormalTok{Civic }\OtherTok{\textless{}{-}}\NormalTok{ Civic }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}\FunctionTok{add\_residuals}\NormalTok{(Civic, civic\_model, }
+                       \AttributeTok{var =} \StringTok{"resid"}\NormalTok{),}
+         
+         \FunctionTok{add\_predictions}\NormalTok{(Civic, civic\_model, }
+                       \AttributeTok{var =} \StringTok{"pred"}\NormalTok{))}
+
+\CommentTok{\# Get the first mileage value}
+\NormalTok{Civic }\OtherTok{\textless{}{-}}\NormalTok{ Civic }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{arrange}\NormalTok{(Mileage)}
+
+\CommentTok{\# Getting first prediction and residual}
+\FunctionTok{print}\NormalTok{(}\StringTok{"The predicted value is:"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "The predicted value is:"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Civic}\SpecialCharTok{$}\NormalTok{pred[}\DecValTok{1}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 22413.22
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(}\StringTok{"The residual is:"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "The residual is:"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Civic}\SpecialCharTok{$}\NormalTok{resid[}\DecValTok{1}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5336.784
+\end{verbatim}
+
+\hypertarget{d}{%
+\subsection{d)}\label{d}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Civic }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Mileage, }\AttributeTok{y =}\NormalTok{ Price)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_abline}\NormalTok{(}\AttributeTok{slope =}\NormalTok{ civic\_model}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{], }
+              \AttributeTok{intercept =}\NormalTok{ civic\_model}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{1}\NormalTok{]) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Linear Regression Model for Mileage v Price"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{data_analysis_files/figure-latex/unnamed-chunk-17-1.pdf}
+
+\hypertarget{e-the-model-seems-to-sort-of-pass-of-one-assumption-as-we-do-not-observe-a-normal-distribution-of-residuals-as-seen-by-the-non-linear-shape-the-qq-plot-and-relative-homoscedasticity-as-seen-in-the-residual-plot}{%
+\subsection{\texorpdfstring{e) \emph{The model seems to sort of pass of
+one assumption as we do not observe a normal distribution of residuals
+(as seen by the non linear shape the QQ plot), and relative
+homoscedasticity (as seen in the residual
+plot)}}{e) The model seems to sort of pass of one assumption as we do not observe a normal distribution of residuals (as seen by the non linear shape the QQ plot), and relative homoscedasticity (as seen in the residual plot)}}\label{e-the-model-seems-to-sort-of-pass-of-one-assumption-as-we-do-not-observe-a-normal-distribution-of-residuals-as-seen-by-the-non-linear-shape-the-qq-plot-and-relative-homoscedasticity-as-seen-in-the-residual-plot}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Residual Plots}
+\NormalTok{Civic }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ pred, }\AttributeTok{y =}\NormalTok{ resid)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_hline}\NormalTok{(}\AttributeTok{yintercept =} \DecValTok{0}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Residual Plot"}\NormalTok{,}
+       \AttributeTok{x =} \StringTok{"Predicted Values"}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{"Residuals"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{data_analysis_files/figure-latex/unnamed-chunk-18-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Civic }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_qq}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{sample =}\NormalTok{ resid)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_qq\_line}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{sample =}\NormalTok{ resid)) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"Z Score"}\NormalTok{,}
+       \AttributeTok{title =} \StringTok{"QQ Plot"}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{"Residuals"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{data_analysis_files/figure-latex/unnamed-chunk-19-1.pdf}
+
+\hypertarget{f-the-model-fails-as-we-see-grouping-of-positive-or-negative-residuals-within-the-index-plot.}{%
+\subsection{\texorpdfstring{f) \emph{The model fails as we see grouping
+of positive or negative residuals within the index
+plot.}}{f) The model fails as we see grouping of positive or negative residuals within the index plot.}}\label{f-the-model-fails-as-we-see-grouping-of-positive-or-negative-residuals-within-the-index-plot.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Civic }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Year, }\AttributeTok{y =}\NormalTok{ resid)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{(}\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Year, }\AttributeTok{y =}\NormalTok{ resid)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_hline}\NormalTok{(}\AttributeTok{yintercept =} \DecValTok{0}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Residual Index Plot"}\NormalTok{,}
+       \AttributeTok{x =} \StringTok{"Index/Year"}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{"Residuals"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{data_analysis_files/figure-latex/unnamed-chunk-20-1.pdf}
+
+\hypertarget{g-_our-equation-is-ey-or-price--74.6748-or-beta1miles-22525.2285-or-beta0.-our-slope-within-the-context-of-this-is-that-with-every-1k-mile-increase-in-the-mileage-we-observe-a-74.64-dollar-decrease-in-the-price._}{%
+\subsection{g) \_Our equation is E(y) or Price = (-74.6748 or
+Beta1)*(Miles) + (22525.2285 or Beta0). Our slope within the context of
+this is that with every 1k mile increase in the mileage we observe a
+74.64 dollar decrease in the
+price.\_}\label{g-_our-equation-is-ey-or-price--74.6748-or-beta1miles-22525.2285-or-beta0.-our-slope-within-the-context-of-this-is-that-with-every-1k-mile-increase-in-the-mileage-we-observe-a-74.64-dollar-decrease-in-the-price._}}
+
+\hypertarget{h-_our-standard-error-for-the-slope-is-15.1940303331733.-if-we-were-to-repeat-our-sampling-and-re-fit-the-model-many-times-using-different-random-samples-from-the-population-about-68-of-the-time-the-true-value-of-the-mileage-coefficient-would-be-within-one-standard-error-of-the-estimated-coefficient-i.e.-between-estimate---15.194-and-estimate-15.194.-similarly-about-95-of-the-time-the-true-value-of-the-mileage-coefficient-would-be-within-two-standard-errors-of-the-estimated-coefficient-i.e.-between-estimate---215.194-and-estimate-215.194.-21-of-the-residuals-are-greater-than-2se-which-probably-means-our-model-does-not-do-such-a-great-job._}{%
+\subsection{\texorpdfstring{h) \_Our standard error for the slope is
+15.1940303331733. If we were to repeat our sampling and re-fit the model
+many times, using different random samples from the population, about
+68\% of the time the true value of the Mileage coefficient would be
+within one standard error of the estimated coefficient (i.e., between
+estimate - 15.194 and estimate + 15.194). Similarly, about 95\% of the
+time the true value of the Mileage coefficient would be within two
+standard errors of the estimated coefficient (i.e., between estimate -
+2\emph{15.194 and estimate + 2}15.194). 21 of the residuals are greater
+than 2*SE which probably means our model does not do such a great
+job.\_}{h) \_Our standard error for the slope is 15.1940303331733. If we were to repeat our sampling and re-fit the model many times, using different random samples from the population, about 68\% of the time the true value of the Mileage coefficient would be within one standard error of the estimated coefficient (i.e., between estimate - 15.194 and estimate + 15.194). Similarly, about 95\% of the time the true value of the Mileage coefficient would be within two standard errors of the estimated coefficient (i.e., between estimate - 215.194 and estimate + 215.194). 21 of the residuals are greater than 2*SE which probably means our model does not do such a great job.\_}}\label{h-_our-standard-error-for-the-slope-is-15.1940303331733.-if-we-were-to-repeat-our-sampling-and-re-fit-the-model-many-times-using-different-random-samples-from-the-population-about-68-of-the-time-the-true-value-of-the-mileage-coefficient-would-be-within-one-standard-error-of-the-estimated-coefficient-i.e.-between-estimate---15.194-and-estimate-15.194.-similarly-about-95-of-the-time-the-true-value-of-the-mileage-coefficient-would-be-within-two-standard-errors-of-the-estimated-coefficient-i.e.-between-estimate---215.194-and-estimate-215.194.-21-of-the-residuals-are-greater-than-2se-which-probably-means-our-model-does-not-do-such-a-great-job._}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Extract the standard error for the Mileage coefficient}
+\NormalTok{se\_mileage }\OtherTok{\textless{}{-}} \FunctionTok{summary}\NormalTok{(civic\_model)}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{, }\StringTok{"Std. Error"}\NormalTok{]}
+
+\CommentTok{\# View the standard error for the Mileage coefficient}
+\FunctionTok{print}\NormalTok{(}\FunctionTok{paste}\NormalTok{(}\StringTok{"Standard error for the Mileage coefficient:"}\NormalTok{, se\_mileage))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Standard error for the Mileage coefficient: 15.1940303331733"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# See how many residuals are greater than 2*SE}
+\NormalTok{counter }\OtherTok{=} \DecValTok{0}
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in}\NormalTok{ Civic}\SpecialCharTok{$}\NormalTok{resid)\{}
+  \ControlFlowTok{if}\NormalTok{ (i }\SpecialCharTok{\textgreater{}} \DecValTok{2}\SpecialCharTok{*}\NormalTok{se\_mileage)\{}
+\NormalTok{    counter }\OtherTok{\textless{}{-}}\NormalTok{ counter }\SpecialCharTok{+} \DecValTok{1}
+\NormalTok{  \}}
+\NormalTok{\}}
+
+\FunctionTok{print}\NormalTok{(counter)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 21
+\end{verbatim}
+
+\hypertarget{i-to-get-our-test-statistic-for-our-slope-we-must-divide-the-difference-between-the-slope--74.6748-and-the-null-parameter-which-in-this-case-would-be-0-by-the-standard-error-of-the-slope-15.1940303331733.-after-we-do-this-we-get-a-test-statistic-of--4.9147.-our-p-value-is-0.00001035873.-this-provides-significance-evidence-to-suggest-that-the-slope-is-significant-at-a-0.05-significance-level.}{%
+\subsection{\texorpdfstring{i) \emph{To get our test statistic for our
+slope, we must divide the difference between the slope (-74.6748) and
+the null parameter (which in this case would be 0) by the standard error
+of the slope (15.1940303331733). After we do this we get a test
+statistic of -4.9147. Our p value is 0.00001035873. This provides
+significance evidence to suggest that the slope is significant at a 0.05
+significance
+level.}}{i) To get our test statistic for our slope, we must divide the difference between the slope (-74.6748) and the null parameter (which in this case would be 0) by the standard error of the slope (15.1940303331733). After we do this we get a test statistic of -4.9147. Our p value is 0.00001035873. This provides significance evidence to suggest that the slope is significant at a 0.05 significance level.}}\label{i-to-get-our-test-statistic-for-our-slope-we-must-divide-the-difference-between-the-slope--74.6748-and-the-null-parameter-which-in-this-case-would-be-0-by-the-standard-error-of-the-slope-15.1940303331733.-after-we-do-this-we-get-a-test-statistic-of--4.9147.-our-p-value-is-0.00001035873.-this-provides-significance-evidence-to-suggest-that-the-slope-is-significant-at-a-0.05-significance-level.}}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Hypothesis tests: Null Hypothesis: The true slope coefficient of
+  the regression model is equal to zero. Alternative Hypothesis: The
+  true slope coefficient of the regression model is not equal to zero.}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Set the degrees of freedom and test statistic}
+\NormalTok{df }\OtherTok{\textless{}{-}} \DecValTok{49}
+\NormalTok{t\_stat }\OtherTok{\textless{}{-}} \SpecialCharTok{{-}}\FloatTok{4.9147}
+
+\CommentTok{\# Calculate the p{-}value (two{-}tailed test)}
+\NormalTok{p\_val }\OtherTok{\textless{}{-}} \DecValTok{2} \SpecialCharTok{*} \FunctionTok{pt}\NormalTok{(}\FunctionTok{abs}\NormalTok{(t\_stat), df, }\AttributeTok{lower.tail =} \ConstantTok{FALSE}\NormalTok{)}
+
+\CommentTok{\# Print the p{-}value}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"p{-}value ="}\NormalTok{, }\FunctionTok{format}\NormalTok{(p\_val, }\AttributeTok{scientific =} \ConstantTok{FALSE}\NormalTok{), }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## p-value = 0.00001035873
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Visualize the t{-}distribution with the critical region shaded}
+\FunctionTok{curve}\NormalTok{(}\FunctionTok{dt}\NormalTok{(x, df), }\AttributeTok{xlim =} \FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{5}\NormalTok{, }\DecValTok{5}\NormalTok{), }\AttributeTok{ylim =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{0.5}\NormalTok{), }\AttributeTok{ylab =} \StringTok{"Density"}\NormalTok{)}
+\FunctionTok{abline}\NormalTok{(}\AttributeTok{v =} \FunctionTok{qt}\NormalTok{(}\FloatTok{0.025}\NormalTok{, df), }\AttributeTok{lty =} \DecValTok{2}\NormalTok{)}
+\FunctionTok{abline}\NormalTok{(}\AttributeTok{v =} \SpecialCharTok{{-}}\FunctionTok{qt}\NormalTok{(}\FloatTok{0.025}\NormalTok{, df), }\AttributeTok{lty =} \DecValTok{2}\NormalTok{)}
+\FunctionTok{abline}\NormalTok{(}\AttributeTok{v =}\NormalTok{ t\_stat, }\AttributeTok{lwd =} \DecValTok{2}\NormalTok{, }\AttributeTok{col =} \StringTok{"red"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{data_analysis_files/figure-latex/unnamed-chunk-22-1.pdf}
+
+\hypertarget{j-an-r-squared-value-of-0.3301869-for-a-linear-model-with-mileage-as-the-explanatory-variable-and-price-as-the-response-variable-indicates-that-33.02-of-the-variation-in-the-price-of-the-car-can-be-explained-by-the-variation-in-its-mileage.}{%
+\subsection{\texorpdfstring{j) \emph{An R-squared value of 0.3301869 for
+a linear model with mileage as the explanatory variable and price as the
+response variable indicates that 33.02\% of the variation in the price
+of the car can be explained by the variation in its
+mileage.}}{j) An R-squared value of 0.3301869 for a linear model with mileage as the explanatory variable and price as the response variable indicates that 33.02\% of the variation in the price of the car can be explained by the variation in its mileage.}}\label{j-an-r-squared-value-of-0.3301869-for-a-linear-model-with-mileage-as-the-explanatory-variable-and-price-as-the-response-variable-indicates-that-33.02-of-the-variation-in-the-price-of-the-car-can-be-explained-by-the-variation-in-its-mileage.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{civic\_model }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{glance}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{select}\NormalTok{(r.squared)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 1 x 1
+##   r.squared
+##       <dbl>
+## 1     0.330
+\end{verbatim}
+
+\hypertarget{k-the-change-is-not-really-discernible-but-we-can-notice-a-very-slightly-steeper-downward-slope-and-a-slight-upwards-shift.}{%
+\subsection{\texorpdfstring{k) \emph{The change is not really
+discernible but we can notice a very slightly steeper downward slope and
+a slight upwards
+shift.}}{k) The change is not really discernible but we can notice a very slightly steeper downward slope and a slight upwards shift.}}\label{k-the-change-is-not-really-discernible-but-we-can-notice-a-very-slightly-steeper-downward-slope-and-a-slight-upwards-shift.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Civic2 }\OtherTok{\textless{}{-}}\NormalTok{ Civic[Civic}\SpecialCharTok{$}\NormalTok{Year }\SpecialCharTok{!=} \DecValTok{2001}\NormalTok{, ]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{civic2\_model }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(Price }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Mileage, }\AttributeTok{data =}\NormalTok{ Civic2)}
+
+\NormalTok{Civic2 }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Mileage, }\AttributeTok{y =}\NormalTok{ Price)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_abline}\NormalTok{(}\AttributeTok{slope =}\NormalTok{ civic2\_model}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{], }\AttributeTok{intercept =}\NormalTok{ civic2\_model}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{1}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{data_analysis_files/figure-latex/unnamed-chunk-25-1.pdf}
+
+\end{document}
